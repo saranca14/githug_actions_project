@@ -13,10 +13,19 @@ jobs:
               run: |
                 ls -alt
                 chmod -R +x scripts/
-                cd scripts &&  ./generate_ascii.sh\
+                cd scripts &&  ./generate_ascii.sh
+            - uses: actions/upload-artifact@v4
+              with:
+                name: dragon_pic
+                path: scripts/dragon.txt
     test_job:
         needs: build_job
         runs-on: ubuntu-latest
         steps:
             - name: test dragon_ascii script
               run: grep -i | "dragon" dragon.txt
+
+            - name: download artifact
+              uses: actions/download-artifact@v4
+              with:
+                name: dragon_pic
