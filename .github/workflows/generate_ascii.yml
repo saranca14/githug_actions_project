@@ -27,4 +27,6 @@ jobs:
               with:
                 name: dragon_pic
             - name: test dragon_ascii script
-              run: grep -i | "dragon" dragon.txt
+              run: |
+                ls -alt
+                grep -i | "Dragon" dragon.txt
