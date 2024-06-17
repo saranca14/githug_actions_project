@@ -29,4 +29,4 @@ jobs:
             - name: test dragon_ascii script
               run: |
                 ls -alt
-                grep -i | "Dragon" dragon.txt
+                grep -i "Dragon" dragon.txt
