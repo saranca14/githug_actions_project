@@ -11,3 +11,9 @@ jobs:
 
             - name: list files
               run: ls
+
+            - name: read the file
+              run: cat README.md
+
+            - name: checkout github repo
+              uses: actions/checkout@v4
