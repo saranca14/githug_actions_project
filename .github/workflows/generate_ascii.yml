@@ -1,0 +1,20 @@
+name: generate ascii
+
+on: push
+
+jobs:
+    build_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout github repo
+              uses: actions/checkout@v4
+
+            - name: execute dragon_ascii script
+              run: |
+                chmod +x scripts/generate_ascii.sh
+                ./scripts/generate_ascii.sh\
+    test_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: test dragon_ascii script
+              run: grep -i | "dragon" dragon.txt
