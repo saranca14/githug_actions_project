@@ -11,7 +11,8 @@ jobs:
 
             - name: execute dragon_ascii script
               run: |
-                chmod -R +x scripts/generate_ascii.sh
+                ls -alt
+                chmod -R +x scripts/
                 cd scripts/generate_ascii.sh &&  ./generate_ascii.sh\
     test_job:
         needs: build_job
