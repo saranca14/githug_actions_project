@@ -9,6 +9,11 @@ jobs:
             - name: checkout github repo
               uses: actions/checkout@v4
 
+            - name: execute shell script
+              run: |
+                chmod +x scripts/sample_script.sh
+                ./scripts/sample_script.sh
+
             - name: checking some set of commands
               run: |
                 echo "First hello"
