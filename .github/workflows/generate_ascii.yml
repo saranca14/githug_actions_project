@@ -11,9 +11,10 @@ jobs:
 
             - name: execute dragon_ascii script
               run: |
-                chmod +x scripts/generate_ascii.sh
-                ./scripts/generate_ascii.sh\
+                chmod -R +x scripts/generate_ascii.sh
+                cd scripts/generate_ascii.sh &&  ./generate_ascii.sh\
     test_job:
+        needs: build_job
         runs-on: ubuntu-latest
         steps:
             - name: test dragon_ascii script
